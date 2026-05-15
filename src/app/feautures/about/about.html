@@ -1,0 +1,77 @@
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <!-- Terminal Panel -->
+      <div class="about-terminal" appReveal>
+        <div class="terminal-bar">
+          <div class="t-dot"></div>
+          <div class="t-dot"></div>
+          <div class="t-dot"></div>
+          <div class="terminal-title">profile.json</div>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line">
+            <span class="t-prompt">$ </span><span class="t-cmd">cat profile.json</span>
+          </div>
+          <div class="t-line"><span class="t-comment">&#123;</span></div>
+          <div class="t-line">
+            &nbsp;&nbsp;<span class="t-key">"name"</span>:
+            <span class="t-string">"{{ data.profile().name }}"</span>,
+          </div>
+          <div class="t-line">
+            &nbsp;&nbsp;<span class="t-key">"role"</span>:
+            <span class="t-string">"{{ data.profile().subtitle | translate  }}"</span>,
+          </div>
+          <div class="t-line">
+            &nbsp;&nbsp;<span class="t-key">"location"</span>:
+            <span class="t-string">{{ 'profile.location' | translate }}</span>,
+          </div>
+          <div class="t-line">
+            &nbsp;&nbsp;<span class="t-key">"experience"</span>:
+            <span class="t-string">{{ 'profile.experience' | translate }}</span>,
+          </div>
+          <div class="t-line">&nbsp;&nbsp;<span class="t-key">"focus"</span>: [</div>
+          <div class="t-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-string">"Backend Architecture"</span>,
+          </div>
+          <div class="t-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-string">"AI Integration"</span>,
+          </div>
+          <div class="t-line">
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-string">"DevOps Automation"</span>
+          </div>
+          <div class="t-line">&nbsp;&nbsp;],</div>
+          <div class="t-line">
+            &nbsp;&nbsp;<span class="t-key">"available"</span>: <span class="t-bool">"{{ 'profile.available' | translate }}"</span>
+          </div>
+          <div class="t-line"><span class="t-comment">&#125;</span></div>
+          <div class="t-line"><span class="t-prompt">$ █</span></div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="about-content" appReveal>
+        <app-section-header
+          eyebrow="{{ 'about.title' | translate }}"
+          title="{{ 'about.subtitle' | translate }}"
+        />
+        <p class="about-text">
+         {{ 'about.desc-1' | translate }}
+        </p>
+        <p class="about-text">
+          {{ 'about.desc-2' | translate }}
+        </p>
+
+        <div class="about-highlights">
+          @for (item of highlights; track item.title) {
+            <div class="highlight-item">
+              <div class="hi-icon"><i [className]="item.icon"></i></div>
+              <div class="hi-title">{{ item.title | translate }}</div>
+              <div class="hi-desc">{{ item.desc | translate }}</div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

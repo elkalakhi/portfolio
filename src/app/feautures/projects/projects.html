@@ -1,0 +1,45 @@
+<section id="projects">
+  <div class="section-inner">
+    <app-section-header eyebrow="{{ 'projects.title' | translate }}" title="{{ 'projects.subtitle' | translate }}" appReveal />
+
+    <div class="projects-grid">
+      @for (proj of data.projects(); track proj.id; let i = $index) {
+        <div class="proj-card" appReveal appTilt>
+          <div class="proj-header">
+            <span class="proj-icon">
+              <img [src]="'assets/' + proj.icon" [alt]="proj.icon" class="project-icon-img"
+            /></span>
+            <span class="proj-status">
+              <span class="proj-status-dot"></span>
+              {{ proj.status | translate }}
+            </span>
+          </div>
+
+          <div class="proj-body">
+            <div class="proj-title">{{ proj.title | translate }}</div>
+            <p class="proj-desc">{{ proj.description | translate }}</p>
+
+            <div class="proj-tech">
+              @for (tech of proj.technologies; track tech) {
+                <span class="proj-tech-tag">{{ tech }}</span>
+              }
+            </div>
+
+            <div class="proj-actions">
+              @if (proj.liveUrl) {
+                <a class="proj-btn proj-btn-primary" [href]="proj.liveUrl" target="_blank">
+                  ⚡ Live Preview
+                </a>
+              }
+              @if (proj.githubUrl) {
+                <a class="proj-btn proj-btn-ghost" [href]="proj.githubUrl" target="_blank">
+                  ⑂ GitHub
+                </a>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

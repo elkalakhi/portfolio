@@ -1,0 +1,407 @@
+/* You can add global styles to this file, and also import other style files */
+// ══════════════════════════════════════════════════════
+//  GLOBAL STYLES — Portfolio Angular
+// ══════════════════════════════════════════════════════
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=Orbitron:wght@400;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@300;400;600&display=swap');
+
+// ── DESIGN TOKENS ──────────────────────────────────────
+:root {
+  --c-bg: #080c1a;
+  --c-bg2: #0f172a;
+  --c-panel: rgba(15, 23, 42, 0.94);
+  --c-blue: #38bdf8;
+  --c-purple: #8b5cf6;
+  --c-cyan: #22d3ee;
+  --c-pink: #f472b6;
+  --c-gold: #eab308;
+  --c-text: #e2e8f0;
+  --c-muted: #94a3b8;
+  --c-border: rgba(148, 163, 184, 0.18);
+  --c-nav-bg: 8, 12, 26;
+
+  --glow-blue: rgba(0, 255, 170, 0.12);
+  --glow-purple: rgba(139, 92, 246, 0.18);
+  --glow-cyan: rgba(34, 211, 238, 0.18);
+  --glow-green: #00ffaa;
+  --glow-gray: #080c1a;
+  --glow-cart-project: #080c1a;
+
+  --skill-low: linear-gradient(90deg, #ef4444, #f87171);
+  --skill-medium: linear-gradient(90deg, #f59e0b, #fbbf24);
+  --skill-good: linear-gradient(90deg, #3b82f6, #06b6d4);
+  --skill-expert: linear-gradient(90deg, #22c55e, #4ade80);
+
+}
+
+html.light-theme {
+  --c-bg: #d1d4d6;
+  --c-bg2: #bfc7d2;
+  --c-panel: rgba(255, 255, 255, 0.692);
+  --c-blue: #2563eb;
+  --c-purple: #7c3aed;
+  --c-cyan: #021017;
+  --c-pink: #ec4899;
+  --c-gold: #d97706;
+  --c-text: #0f172a;
+  --c-muted: #64748b;
+  --c-border: rgba(148, 163, 184, 0.22);
+  --c-nav-bg: 255, 255, 255;
+  --glow-green: #216951;
+  --glow-grey: #a1a1a1;
+
+  --glow-blue: rgb(0 0 0 / 12%);
+  --glow-purple: rgba(124, 58, 237, 0.1);
+  --glow-cyan: rgba(14, 165, 233, 0.12);
+  --glow-gray: #919a9f;
+  --glow-cart-project: #c2c5c6;
+  --skill-low: linear-gradient(90deg, #ef4444, #f87171);
+  --skill-medium: linear-gradient(90deg, #f59e0b, #fbbf24);
+  --skill-good: linear-gradient(90deg, #3b82f6, #06b6d4);
+  --skill-expert: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 25%),
+    linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg2) 100%);
+  color: var(--c-text);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.22);
+}
+
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.45;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary {
+  padding: 0.95rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--c-blue), var(--c-cyan));
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(56, 189, 248, 0.16);
+}
+
+.btn-ghost {
+  padding: 0.95rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--c-border);
+  background: transparent;
+  color: var(--c-text);
+  letter-spacing: 0.04em;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.6);
+  border-radius: 999px;
+}
+
+// ── RESET ──────────────────────────────────────────────
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+  overflow-x: hidden;
+
+  // scanlines
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 212, 255, 0.007) 3px,
+        rgba(0, 212, 255, 0.007) 4px);
+  }
+}
+
+// ── SCROLLBAR ──────────────────────────────────────────
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-blue);
+  border-radius: 2px;
+}
+
+// ── CANVAS BACKGROUND ──────────────────────────────────
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+// ── GRID OVERLAY ───────────────────────────────────────
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+// ── CUSTOM CURSOR ──────────────────────────────────────
+.cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--c-cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s;
+  box-shadow: 0 0 12px var(--c-cyan), 0 0 30px rgba(6, 255, 212, 0.4);
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(0, 212, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.2s, height 0.2s, opacity 0.2s;
+}
+
+// ── SECTION DIVIDER ────────────────────────────────────
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--c-blue), transparent);
+  opacity: 0.2;
+  position: relative;
+  z-index: 1;
+}
+
+// ── BUTTONS (global reusable) ──────────────────────────
+// .btn-primary {
+//   padding: 0.85rem 2rem;
+//   background: linear-gradient(135deg, var(--c-blue), var(--c-purple));
+//   color: #fff;
+//   border: none;
+//   cursor: pointer;
+//   font-family: 'Orbitron', monospace;
+//   font-size: 0.75rem;
+//   font-weight: 700;
+//   letter-spacing: 0.12em;
+//   text-transform: uppercase;
+//   clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+//   transition: all 0.3s;
+//   text-decoration: none;
+//   display: inline-block;
+
+//   &:hover {
+//     box-shadow: 0 0 30px rgba(0,212,255,0.5), 0 0 60px rgba(139,92,246,0.3);
+//     transform: translateY(-2px);
+//   }
+// }
+.btn-primary {
+  padding: 0.85rem 2rem;
+  background: linear-gradient(135deg, var(--c-blue), var(--c-purple));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 27px;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+  }
+}
+
+.btn-ghost {
+  padding: 0.85rem 2rem;
+  background: transparent;
+  color: var(--c-blue);
+  border: 1px solid var(--c-blue);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 27px;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    background: var(--c-blue);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// ── KEYFRAME ANIMATIONS ────────────────────────────────
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    top: -2px;
+  }
+
+  100% {
+    top: 102%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes floatOrb {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  33% {
+    transform: translate(-15px, 20px);
+  }
+
+  66% {
+    transform: translate(20px, -15px);
+  }
+}
+
+@keyframes floatIcon {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}

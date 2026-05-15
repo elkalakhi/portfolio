@@ -1,0 +1,104 @@
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-wrap">
+      <app-section-header
+        eyebrow="{{ 'contact.title' | translate }}"
+        title="{{ 'contact.subtitle' | translate }}"
+        [centered]="true"
+        appReveal
+      />
+
+      <p class="contact-desc" appReveal>
+        {{ 'contact.description' | translate }}
+      </p>
+
+      <div class="contact-grid" appReveal delay="200">
+        @for (item of data.contactInfoList(); track item.label) {
+          @if (item.label === 'LinkedIn') {
+            <a class="contact-item" (click)="openLinkdin()">
+              <div class="project-icon">
+                <img [src]="'assets/' + item.icon" [alt]="item.icon" class="project-icon-img" />
+              </div>
+
+              <div class="ci-label">{{ item.label }}</div>
+            </a>
+          } @else {
+            <a class="contact-item" [href]="item.href" target="_blank">
+              <div class="project-icon">
+                <img [src]="'assets/' + item.icon" [alt]="item.icon" class="project-icon-img" />
+              </div>
+
+              <div class="ci-label">{{ item.label }}</div>
+            </a>
+          }
+        }
+      </div>
+
+      <div class="contact-ctas" appReveal delay="300">
+        <a class="btn-primary" [href]="'mailto:' + data.profile().email">
+          {{ 'buttons.send_message' | translate }} ▹
+        </a>
+        <button class="btn-ghost" (click)="openCv()">{{ 'buttons.view_cv' | translate }}</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modale -->
+<div class="modal-overlay" *ngIf="showModalResume" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title">
+        <i class="ti ti-file-description"></i>
+        <span>{{ 'buttons.view_cv' | translate }}</span>
+      </div>
+      <div class="modal-actions">
+        <a
+          href="https://drive.google.com/file/d/1GvUbwAOI3UlXF26xqMnXeBkANZaKWR70/preview"
+          target="_blank"
+          class="btn-action"
+        >
+          <i class="ti ti-external-link"></i> Ouvrir
+        </a>
+        <button class="btn-close" (click)="closeModal()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <app-resume-viewer
+        cvUrl="https://drive.google.com/file/d/1NK_aYdeOA8ACGormS7B4h2w3yCPTrqSy/preview"
+      >
+      </app-resume-viewer>
+    </div>
+  </div>
+</div>
+
+<!-- Modale Linkdin -->
+<div class="modal-overlay" *ngIf="showModalLinkdin" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title">
+        <i class="ti ti-brand-linkedin"></i>
+        <span>Profil LinkedIn</span>
+      </div>
+      <div class="modal-actions">
+        <a
+          href="https://www.linkedin.com/in/elmehdi-el-kalakhi-98aab5203/"
+          target="_blank"
+          class="btn-action"
+        >
+          <i class="ti ti-external-link"></i> Ouvrir
+        </a>
+        <button class="btn-close" (click)="closeModal()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <app-linkdin-viewer></app-linkdin-viewer>
+    </div>
+  </div>
+</div>

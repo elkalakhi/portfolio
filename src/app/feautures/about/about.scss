@@ -1,0 +1,109 @@
+#about {
+  background: linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg2) 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.section-inner { max-width: 1200px; margin: 0 auto; padding: 6rem 3rem; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ── TERMINAL ── */
+.about-terminal {
+  background: rgba(3,6,15,0.85);
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--glow-blue);
+}
+
+.terminal-bar {
+  background: rgba(8,20,48,0.9);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(0,212,255,0.1);
+}
+
+.t-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  &:nth-child(1) { background: #ff5f56; }
+  &:nth-child(2) { background: #ffbd2e; }
+  &:nth-child(3) { background: #27c93f; }
+}
+
+.terminal-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.65rem;
+  color: var(--c-muted);
+  margin: 0 auto;
+}
+
+.terminal-body { padding: 1.5rem; }
+
+.t-line {
+ font-family: 'Roboto', sans-serif;
+  font-size: 0.75rem;
+  line-height: 2;
+}
+
+.t-prompt { color: var(--c-cyan); }
+.t-cmd    { color: var(--c-blue); }
+.t-comment{ color: var(--c-muted); }
+.t-string { color: #a8ff78; }
+.t-key    { color: #ff9d00; }
+.t-bool   { color: #27c93f; }
+
+/* ── CONTENT ── */
+.about-text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--c-text);
+  margin-bottom: 1.2rem;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.highlight-item {
+  padding: 1rem 1.2rem;
+  background: rgba(0,212,255,0.04);
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: 8px;
+  transition: all 0.3s;
+
+  &:hover {
+    background: rgba(0,212,255,0.08);
+    border-color: rgba(0,212,255,0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,212,255,0.1);
+  }
+}
+
+.hi-icon  { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+.hi-title {
+ font-family: 'Inter', system-ui, sans-serif;
+  font-size: 17px;
+  color: var(--c-blue);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+}
+
+.hi-desc { font-size: 0.8rem; color: var(--c-muted); }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .section-inner { padding: 4rem 1.5rem; }
+}

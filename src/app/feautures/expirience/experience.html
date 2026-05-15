@@ -1,0 +1,82 @@
+<section id="experience">
+  <div class="section-inner">
+    <app-section-header
+      eyebrow="{{ 'experience.subtitle' | translate }}"
+      title="Experiences"
+      appReveal
+    />
+
+    <div class="timeline">
+      @for (exp of data.experiences(); track exp.id; let i = $index) {
+        <div class="tl-item" appReveal [attr.delay]="i * 100">
+          <div class="tl-dot" [class.education]="exp.type === 'education'"></div>
+          <div class="tl-date">{{ exp.period | translate }}</div>
+          <div class="tl-card">
+            <div class="tl-company">{{ exp.company }}</div>
+            <div class="tl-role">{{ exp.role | translate }}</div>
+            <div class="tl-projects">
+              @for (project of exp.projects; track project.id) {
+                <div class="project-card">
+                  <div class="project-top">
+                    <div class="project-icon">
+                      <span class="project-icon">
+                        <img
+                          [src]="'assets/' + project.icon"
+                          [alt]="project.icon"
+                          class="project-icon-img"
+                        />
+                      </span>
+                    </div>
+
+                    <div class="project-info">
+                      <h3>{{ project.title | translate }}</h3>
+
+                      <span
+                        class="project-status"
+                        [class.client]="project.status === 'client'"
+                        [class.intern]="project.status === 'intern'"
+                      >
+                        {{ project.status | translate }}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p class="project-description">
+                    {{ project.description | translate }}
+                  </p>
+
+                  <!-- <div class="project-missions">
+                    <h4>Missions</h4>
+
+                    <ul>
+                      @for (mission of splitMissions(project.mission); track $index) {
+                        <li>{{ mission | translate }}</li>
+                      }
+                    </ul>
+                  </div> -->
+
+                  <div class="project-technologies">
+                    @for (tech of project.technologies; track tech) {
+                      <span class="tech-tag">
+                        {{ tech | translate }}
+                      </span>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+            <div class="exp-footer">
+              <span
+                class="project-type-tag"
+                [class.work]="exp.type === 'work'"
+                [class.travail]="exp.type === 'travail'"
+              >
+                {{ exp.type | translate }}
+              </span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

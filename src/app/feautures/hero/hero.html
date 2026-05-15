@@ -1,0 +1,96 @@
+<section id="hero">
+  <canvas #bgCanvas id="bg-canvas"></canvas>
+
+  <div class="hero-grid">
+    <!-- ── LEFT CONTENT ── -->
+    <div class="hero-left">
+      <div class="hero-tag">{{ data.profile().title | translate }}</div>
+
+      <h1 class="hero-name">
+        <span class="line1">{{ data.profile().firstName }}</span>
+        <span class="line2">{{ data.profile().lastName }}</span>
+      </h1>
+
+      <p class="hero-desc">{{ data.profile().description | translate }}</p>
+
+      <div class="hero-ctas">
+        <button class="btn-primary" (click)="scroll.scrollToSection('projects')">
+          {{ "buttons.view_projects" | translate }}
+        </button>
+        <button class="btn-ghost" (click)="scroll.scrollToSection('contact')"> {{ "buttons.contact_me" | translate }}</button>
+      </div>
+
+      <!-- Animated Stats -->
+      <div class="hero-stats">
+        @for (stat of data.stats(); track stat.label) {
+          <div class="stat-item">
+            <div class="stat-num">{{ stat.value }}{{ stat.suffix }}</div>
+            <div class="stat-label">{{ stat.label | translate }}</div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- ── RIGHT: HOLOGRAPHIC CARD ── -->
+    <div class="hero-visual">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+
+      <div class="float-icon fi1"><i class="fa-brands fa-spring"></i> SpringBoot API</div>
+      <div class="float-icon fi2">☁ AWS Lambda</div>
+      <div class="float-icon fi3">🐳 Docker Swarm</div>
+
+      <div class="holo-card" #holoCard>
+        <div class="holo-scanline"></div>
+
+        <div class="holo-avatar">
+          <img
+            [src]="'assets/' + data.profile().image"
+            [alt]="data.profile().name"
+            class="holo-avatar-img"
+          />
+        </div>
+        <div class="holo-name">{{ data.profile().name | uppercase | translate }}</div>
+        <div class="holo-role">{{ data.profile().subtitle | translate }}</div>
+
+        <!-- Skill bars -->
+        <div class="holo-bars">
+          @for (bar of data.holoBars(); track bar.label; let i = $index) {
+            <div class="holo-bar-row">
+              <span class="holo-bar-label">{{ bar.label }}</span>
+              <div class="holo-bar-track">
+                <div
+                  class="holo-bar-fill"
+                  [style.width.%]="bar.percentage"
+                  [ngClass]="getBarClass(bar.percentage)"
+                ></div>
+              </div>
+              <span class="holo-bar-pct">{{ bar.percentage }}%</span>
+            </div>
+          }
+        </div>
+
+        <div class="holo-divider"></div>
+
+        <div class="holo-tags">
+          @for (skill of data.skills().slice(0, 6); track skill.id) {
+            <span class="holo-tag">{{ skill.name }}</span>
+          }
+        </div>
+
+        <div class="holo-footer">
+          <div class="holo-status">
+            <span class="status-dot"></span>
+            @if (data.profile().available) {
+              {{ "profile.available" | translate }}
+            } @else {
+              {{ "profile.available" | translate }}
+            }
+          </div>
+          <div class="holo-id">version: {{ data.profile().id }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

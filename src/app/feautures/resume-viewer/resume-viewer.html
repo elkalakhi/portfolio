@@ -1,0 +1,33 @@
+<div class="cv-viewer-container">
+  <div class="cv-header">
+    <a [href]="cvUrl" target="_blank" class="btn-open">
+      <i class="ti ti-external-link"></i> Ouvrir dans un nouvel onglet
+    </a>
+  </div>
+
+  <div class="cv-wrapper">
+    <!-- Spinner pendant le chargement -->
+    <div class="loading-overlay" *ngIf="isLoading">
+      <div class="spinner"></div>
+      <p>Chargement du CV...</p>
+    </div>
+
+    <!-- Message d'erreur -->
+    <div class="error-message" *ngIf="hasError">
+      <p>Impossible d'afficher le CV. <a [href]="cvUrl" target="_blank">Téléchargez-le ici</a>.</p>
+    </div>
+
+    <!-- L'iframe -->
+    <iframe
+      *ngIf="!hasError"
+      [src]="safeUrl"
+      (load)="onLoad()"
+      (error)="onError()"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      title="CV"
+      [class.hidden]="isLoading"
+    ></iframe>
+  </div>
+</div>

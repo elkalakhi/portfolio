@@ -1,0 +1,264 @@
+{
+  "nav": {
+    "about": "Qui suis-je",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "certifications": "Éducation",
+    "contact": "Contact"
+  },
+  "profile": {
+    "title": "Ingénieur d'Étude et Développement",
+    "subtitle": "Ingénieur Logiciel",
+    "description": "Ingénieur d'Étude et Développement passionné par la conception d'applications web modernes, performantes et évolutives. Spécialisé dans le développement Full Stack, je travaille principalement avec Java Spring Boot, Angular, React et les bases de données PostgreSQL. J'interviens sur toutes les étapes du cycle de développement : analyse des besoins, conception technique, développement, optimisation des performances et déploiement des applications. Passionné par l'architecture des systèmes web de nouvelle génération et les infrastructures cloud distribuées, je conçois des solutions scalables, robustes et adaptées aux environnements à forte charge.",
+    "available": "NON DISPONIBLE",
+    "location": "\"Maroc - Casablanca\"",
+    "experience": "\"3 ans\""
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "role": "Ingénieur Full Stack",
+    "subtitle": "Java · Angular · React · Microservices",
+    "btn_contact": "Me contacter",
+    "btn_cv": "Voir mon CV"
+  },
+  "about": {
+    "title": "Qui suis-je",
+    "subtitle": "L’ingénierie à <br> la vitesse de demain",
+    "description": "Développeur Full Stack passionné par les architectures propres et les systèmes performants.",
+    "desc-1": "Curieux et passionné par les architectures backend modernes, je m’intéresse particulièrement aux systèmes distribués, aux microservices et aux solutions basées sur Spring Boot et Spring Cloud. Je travaille également sur des architectures événementielles avec Kafka, ainsi que sur l’optimisation des systèmes de communication et d’échange de données entre services, notamment via des approches type MCP et un design avancé des API.",
+    "desc-2": "Dans une logique d’innovation, j’explore l’intégration de l’intelligence artificielle dans les applications backend afin de concevoir des systèmes plus intelligents, réactifs et adaptatifs. J’accorde une importance particulière à la performance, à la résilience et à la scalabilité des architectures que je conçois.",
+    "items": [
+      "Systèmes Backend",
+      "Développement Frontend",
+      "Cloud & DevOps",
+      "Sécurité"
+    ]
+  },
+ "experience": {
+  "title": "Expérience",
+  "subtitle": "parcours professionnel",
+  "experiences": [
+    {
+      "id": 1,
+      "role": "Ingénieur Développement Logiciel",
+      "period": "Mai 2023 - Aujourd'hui",
+      "type": "travail",
+      "projects": [
+        {
+          "id": "1",
+          "title": "Automatisation & Traitement de données métier",
+          "description": "Plateforme permettant l’automatisation du traitement et de la validation des données métier afin d’améliorer l’efficacité opérationnelle et la prise de décision.",
+          "icon": "company/exia.png",
+          "status": "client",
+          "technologies": [
+            "Java",
+            "Spring Boot",
+            "Angular",
+            "Kafka",
+            "MongoDB",
+            "PostgreSQL",
+            "Flyway"
+          ],
+          "mission": [
+            "Design and development of a robust REST API using Spring Boot",
+            "Implementation of an asynchronous processing pipeline using Apache Kafka",
+            "Implementation of Role-Based Access Control (RBAC)",
+            "Development of real-time monitoring dashboards",
+            "Performance optimization and system scalability improvements"
+          ]
+        },
+        {
+          "id": "2",
+          "title": "Application RH interne — Gestion des ressources humaines",
+          "description": "Système centralisé de gestion des ressources humaines permettant la gestion des employés, des congés et des feuilles de temps au sein de l’organisation.",
+          "icon": "company/exia.png",
+          "status": "intern",
+          "technologies": [
+            "Java",
+            "Spring Boot",
+            "Keycloak",
+            "PostgreSQL"
+          ],
+          "mission": [
+            "Développement des APIs REST pour la gestion RH",
+            "Intégration de Keycloak pour l'authentification et le SSO",
+            "Mise en place d'un tableau de bord de suivi",
+            "Implémentation des règles de sécurité applicative"
+          ]
+        },
+        {
+          "id": "3",
+          "title": "Plateforme de modération et supervision IA",
+          "description": "Solution permettant de superviser, valider et corriger les données générées par des systèmes d’intelligence artificielle.",
+          "icon": "company/exia.png",
+          "status": "client",
+          "technologies": [
+            "Java",
+            "Spring Boot",
+            "Kafka",
+            "MongoDB",
+            "PostgreSQL",
+            "MinIO"
+          ],
+          "mission": [
+            "Traitement des flux de données IA",
+            "Correction manuelle des données",
+            "Tableau de bord de supervision et reporting",
+            "Administration et gestion des règles métier"
+          ]
+        },
+        {
+          "id": "4",
+          "title": "GED — Gestion Électronique de Documents",
+          "description": "Solution de gestion documentaire permettant la centralisation, le stockage et la recherche des documents dans un système unique.",
+          "icon": "company/exia.png",
+          "status": "client",
+          "technologies": [
+            "Java",
+            "Spring Boot",
+            "PostgreSQL",
+            "Angular",
+            "MinIO"
+          ],
+          "mission": [
+            "Module d'import et gestion de documents",
+            "Moteur de recherche avancé",
+            "Stockage objet S3-compatible (MinIO)",
+            "Interface Angular de gestion documentaire"
+          ]
+        },
+        {
+          "id": "5",
+          "title": "Plateforme E-commerce B2B — Distribution Automobile",
+          "description": "Plateforme e-commerce dédiée à la vente et distribution de pièces automobiles multi-marques.",
+          "icon": "company/exia.png",
+          "status": "client",
+          "technologies": [
+            "Java",
+            "Spring Boot",
+            "PostgreSQL",
+            "Redis",
+            "MinIO",
+            "Loki",
+            "Grafana"
+          ],
+          "mission": [
+            "Gestion des commandes",
+            "Mise en place de la vérification de stock",
+            "Gestion des marques et catégories de produits",
+            "Implémentation d’une solution Redis pour l’optimisation des performances",
+            "Mise en place de la migration de base de données avec Liquibase",
+            "Développement d’un processus de recherche d’articles via des APIs externes",
+            "Implémentation du processus d’ajout au panier (simple et en masse)",
+            "Mise en place d’un système d’historique de recherche",
+            "Mise en place d’un système de mise en avant des produits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "role": "Développeur Full Stack",
+      "period": "Septembre 2022 — Mai 2023",
+      "type": "travail",
+      "projects": [
+        {
+          "id": "1",
+          "title": "Gestion des feuilles de soins électroniques",
+          "description": "Solution digitale de gestion des feuilles de soins électroniques permettant de gérer les patients, les actes médicaux et les régimes d’assurance.",
+          "icon": "company/sihaty.jpg",
+          "status": "intern",
+          "technologies": [
+            "Java",
+            "Spring Boot",
+            "Angular",
+            "MySQL",
+            "MongoDB",
+            "Redis"
+          ],
+          "mission": [
+            "Modélisation UML et conception de l'architecture applicative",
+            "Développement backend complet avec Spring Boot (APIs REST)",
+            "Gestion des patients, actes médicaux et régimes d'assurance (CNSS/CNOPS)",
+            "Intégration de Redis pour le caching et l'optimisation des performances",
+            "Développement frontend avec Angular pour la saisie et la consultation des données"
+          ],
+          "liveUrl": "",
+          "githubUrl": "",
+          "featured": true
+        }
+      ]
+    }
+  ]
+},
+  "projects": {
+    "title": "Réalisations",
+    "subtitle": "Projets personnels",
+    "items": [
+      {
+        "id": 1,
+        "tag": "application web",
+        "description": "Application web complète dédiée à la gestion des biens immobiliers, des clients et des rendez-vous.La plateforme permet aux agences immobilières de centraliser leurs opérations à travers une interface moderne et intuitive. and multi-tenant SaaS architecture supporting 10,000+ concurrent users."
+      },
+      {
+        "id": 2,
+        "tag": "application web",
+        "description": "Application web permettant de centraliser, gérer et exploiter plusieurs modèles d’intelligence artificielle à partir d’une interface unique et moderne."
+      },
+      {
+        "id": 3,
+        "tag": "application web",
+        "description": "Application intelligente permettant de comparer différentes versions de fichiers JAR afin de détecter rapidement les changements de code, les incompatibilités et les problèmes de versioning en environnement de prod."
+      }
+    ]
+  },
+  "education": {
+    "title": "Diplômes",
+    "subtitle": "Éducation",
+    "items": [
+      {
+        "id": 1,
+        "degree": "Master (II-BDDC)",
+        "institution": "Ingénierie Informatique, Big Data et Cloud Computing (II-BDDC) École Normale Supérieure d'Enseignement Technique (ENSET)",
+        "period": "2023 a 2025"
+      },
+      {
+        "id": 2,
+        "degree": "Licence (LICDA) ",
+        "institution": "Conception et developpememnt d’applications (LICDA) Universitaire Professionnelle Faculté des Sciences et Techniques, Settat",
+        "period": "2017 - 2020"
+      },
+      {
+        "id": 3,
+        "degree": "Technicien Spécialisé (OFPPT)",
+        "institution": "Diplôme de Technicien Spécialisé en Développement Informatique Institut Spécialisé de Technologie Appliquée NTIC, Sidi Maarouf, Casablanca",
+        "period": "2019 a 2021"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Outils & technologies",
+    "subtitle": "Outils & technologies"
+  },
+  "contact": {
+    "title": "Me contacter",
+    "subtitle": "Construisons quelque chose d’exceptionnel",
+    "description": "Ouvert aux projets techniques ambitieux et aux défis d’ingénierie modernes. Travaillons ensemble pour transformer des idées en solutions concrètes et innovantes"
+  },
+  "stats": {
+    "experience": "Années d'expérience",
+    "projects": "Projets réalisés",
+    "education": "Formations"
+  },
+  "buttons": {
+    "view_projects": "Voir mes projets",
+    "contact_me": "Me contacter",
+    "send_message": "Envoyer un message",
+    "view_cv": "Voir le CV",
+    "view_linkedin": "Voir LinkedIn"
+  },
+  "footer": {
+  "title": "Retour en haut"
+}
+}
